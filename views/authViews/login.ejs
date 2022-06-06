@@ -1,0 +1,26 @@
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/Navbar.ejs') %>
+    <%- include('../partials/countUser.ejs') %>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-11 col-11 col-xs-11 col-sm-11 mx-auto">
+                    <form class="form" id="a-form" method="POST" action="/login">
+                        <h2 class="form_title title text-center">Log Into Your  Account</h2>
+                        <span class="form__span">or Enter your email address to Sign up FREE</span>
+                        <%if(data.hasError){%>
+                            <code class="text-danger mt-2 mb-2">
+                                <%= data.message %>
+                            </code>
+                        <%}%>
+
+                        <input class="form__input mt-3" value="<%= data.email %>" type="text" name="email" placeholder="Email">
+                        <input class="form__input mt-3" value="<%= data.password %>" type="password" name="password" placeholder="Password">
+                        <button class="form__button button submit">SIGN IN</button>
+                    </form>   
+            </div>
+        </div>
+    </div>
+</body>
+</html>

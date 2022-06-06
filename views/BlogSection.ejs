@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="TemplateMo" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Finance Business - Contact Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/css/fontawesome.css" />
+    <link rel="stylesheet" href="/css/templatemo-finance-business.css" />
+    <link rel="stylesheet" href="/css/owl.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .files {
+        display: none !important;
+      }
+      .custom-file-upload {
+        border: 2px solid #ccc;
+        display: inline-block;
+        padding: 6px 18px;
+        cursor: pointer;
+        border-radius: 7px;
+        font-weight: 500;
+      }
+      body {
+        background-color: #e9ecef;
+      }
+      .blog-card {
+        width: auto;
+        height: 36rem;
+        /* border: 2px solid grey; */
+        border-radius: 20px;
+        background-color: #f1faee;
+        position: relative;
+        overflow: hidden;
+      }
+      .image {
+        width: 100%;
+        height: 18rem;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .readmore {
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        width: auto;
+        height: auto;
+        border: 1px solid #ff006e;
+        color: white;
+        border-top-left-radius: 20px;
+        background-color: #ff006e;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .readmore:hover {
+        color: black;
+      }
+      .name,
+      .date {
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+      .content > h6 {
+        font-size: 15px;
+        word-spacing: .2rem;
+      }
+      .content > p {
+        margin-top: 10px;
+        font-size: 11px;
+        line-height: 15px !important;
+      }
+      a{
+        color: white;
+      }
+      a:hover{
+        text-decoration: none !important;
+        color: black;
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/blog.js" defer></script>
+    <!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/contact.js" defer></script>
+  </head>
+
+  <body>
+    <%-include('./partial/preLoader.ejs')%> <%-include('./partial/Navbar.ejs')%>
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Blog Section</h1>
+            <span>Read Blogs Based On Startups </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="callback-form mt-5 mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Write a <em>BLOG</em></h2>
+              <span>Only Admin Access</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="contact-form">
+              <form
+                action="/blog-post"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-sm-12">
+                    <input
+                      name="title"
+                      type="text"
+                      class="form-control px-4"
+                      id="title"
+                      placeholder="Blog Title"
+                      required
+                    />
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-sm-12">
+                    <label class="custom-file-upload">
+                      <input
+                        name="image"
+                        type="file"
+                        id="image"
+                        accept="image/*"
+                        class="files"
+                      />
+                      Select Image
+                    </label>
+                  </div>
+
+                  <div class="col-lg-12 col-12 mt-3">
+                    <textarea
+                      name="description"
+                      rows="6"
+                      class="form-control px-4"
+                      id="description"
+                      placeholder="Blog Description"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-lg-12">
+                    <button
+                      type="submit"
+                      id="form-submit"
+                      class="border-button"
+                    >
+                      Publish
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>All <em>BLOG's</em></h2>
+            <span>Keep Read And Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5 blogList">
+            <div class="col-2 mx-auto ">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-border text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-border text-info" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+      </div>
+    </div>
+    <%- include('./partial/Footer.ejs') %>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="/js/custom.js"></script>
+    <script src="/js/owl.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/accordions.js"></script>
+
+    <script language="text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t) {
+        //declaring the array outside of the
+        if (!cleared[t.id]) {
+          // function makes it static and global
+          cleared[t.id] = 1; // you could use true and false, but that's more typing
+          t.value = ""; // with more chance of typos
+          t.style.color = "#fff";
+        }
+      }
+    </script>
+  </body>
+</html>

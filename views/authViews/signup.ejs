@@ -1,0 +1,50 @@
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/Navbar.ejs') %>
+    <%- include('../partials/countUser.ejs') %>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-11 col-11 col-xs-11 col-sm-11 mx-auto mb-5">                  
+                        <form class="form" id="a-form" method="POST" action="/signup">
+                            <h2 class="form_title title">Create Account</h2>
+                            <span class="form__span">or Enter your email address to <span class="bg-success">Sign up FREE</span></span>
+                            <%if(data.hasError){%>
+                                <code class="text-danger mt-2 mb-2">
+                                    <%= data.message %>
+                                </code>
+                            <%}%>
+                            <input class="form__input mt-2" value="<%= data.name %>" name="name"  type="text" placeholder="Name">
+
+                            <input class="form__input mt-2" value="<%= data.email %>" name="email" type="email" placeholder="Email">
+
+                            <input class="form__input mt-2" value="<%= data.password %>" name="password" type="password" placeholder="Password">
+
+                            <select name="college" id="college" class="custom-select mt-4">
+                                <option value="null">Choose Your College</option>
+                                <option value="dharwad">IIIT Dharwad</option>
+                                <option value="kota">IIIT kota</option>
+                            </select>
+
+                            <select name="branch" id="branch" class="custom-select mt-4">
+                                <option value="null">Choose Your Branch</option>
+                                <option value="cse">CSE</option>
+                                <option value="ece">ECE</option>
+                                <option value="dsai">DSAI</option>
+                            </select>
+
+                            <select name="presentyear" id="presentyear" class="custom-select mt-4">
+                                <option value="null">Choose Your Present Year</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+
+
+                            <button class="form__button button submit">SIGN UP</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
